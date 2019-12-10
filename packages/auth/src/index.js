@@ -7,7 +7,7 @@ import {
  * @type {object}
  * @property {string | number} id - an ID.
  * @property {string} name - your name.
- * @property {string} profileImage - profile image.
+ * @property {string} [profileImage] - profile image.
  */
 
 /**
@@ -15,15 +15,28 @@ import {
  * @type {object}
  * @property {UserInfoType} [user]
  * @property {Function} [onForbidden]
+ * @property {Function} [login]
+ * @property {Function} [register]
+ * @property {Function} [getUserInfo]
+ * @property {Function} [logout]
  */
 
 /**
  * @type {React.Context<AuthContextType>}
  */
 const Context = React.createContext({});
-const AuthProvider = ({
+export const AuthProvider = ({
   children,
-  forbiddenPath = '/forbidden'
+  forbiddenPath = '/forbidden',
+  client = {
+    login: (payload) => Promise.resolve(),
+    register: (payload) => Promise.resolve(),
+    getUserInfo: (payload) => Promise.resolve({
+      id: 1,
+      name: 'Mock'
+    }),
+    logout: (payload) => Promise.resolve()
+  }
 }) => {
   /**
    * @type [UserInfoType, React.Dispatch<UserInfoType>]
@@ -34,11 +47,16 @@ const AuthProvider = ({
   const contextValue = {
     user,
     onForbidden: () => history.push(forbiddenPath),
-    login: () => setuser({
-      id: 1,
-      name: 'jump',
-      profileImage: 'https://i.pravatar.cc/300'
-    })
+    ...client,
+    login: async () => {
+      await client.login()
+      const user = await client.getUserInfo()
+      setuser(user)
+    },
+    logout: async () => {
+      await client.logout()
+      setuser(null)
+    }
   }
   return (
     <Context.Provider value={contextValue}>
@@ -47,7 +65,7 @@ const AuthProvider = ({
   )
 }
 
-const useAuth = () => {
+export const useAuth = () => {
   const context = useContext(Context)
   if (!context) {
     throw new Error('useAuth should be use in side auth context')
@@ -58,7 +76,7 @@ const useAuth = () => {
  * 
  * @param {function} forbiddenCb 
  */
-const useAuthenticated = (forbiddenCb) => {
+export const useAuthenticated = (forbiddenCb) => {
   const {
     user,
     onForbidden
@@ -66,9 +84,4 @@ const useAuthenticated = (forbiddenCb) => {
   if (!user) {
     forbiddenCb ? forbiddenCb() : onForbidden()
   }
-}
-export default {
-  AuthProvider,
-  useAuth,
-  useAuthenticated
 }

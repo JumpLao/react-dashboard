@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Layout, Row, Col, Avatar, Menu, Icon, Dropdown, List } from 'antd'
+import { Layout, Row, Col, Avatar, Menu, Icon, List } from 'antd'
 import { useAuth } from "@react-dashboard/auth"
 const {
   Header,

@@ -1,10 +1,11 @@
 import React from 'react'
-import Form from '../../components/form/Form'
-import TextInput from '../../components/form/TextInput'
-import TextAreaInput from '../../components/form/TextAreaInput'
-import SubmitButton from '../../components/form/SubmitButton'
+import {
+  Form,
+  TextInput,
+  TextAreaInput,
+  SubmitButton
+} from '@react-dashboard/form'
 import validationSchema from './validationSchema'
-
 const Create = () => {
   const handleSubmit = (data) => {
     console.log(data)

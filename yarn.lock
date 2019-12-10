@@ -16337,6 +16337,11 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
+typescript-temporary-fork-for-jsdoc@^3.6.0-insiders.20190802:
+  version "3.6.0-insiders.20190802"
+  resolved "https://registry.yarnpkg.com/typescript-temporary-fork-for-jsdoc/-/typescript-temporary-fork-for-jsdoc-3.6.0-insiders.20190802.tgz#aece6f3f5d53c6e06e5e1c4af5a19183d7124ab6"
+  integrity sha512-j76opNh6ljAXDUDXr03+pOkITiATPbUlQlMp9pxD/SR3eNKAtIdHwOTf3dDspyGs8TGJQjQXMUiYqJr0gW+nCg==
+
 typescript@>=2.8.3:
   version "3.7.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.7.3.tgz#b36840668a16458a7025b9eabfad11b66ab85c69"
