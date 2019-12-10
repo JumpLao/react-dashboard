@@ -15,9 +15,9 @@ const AppLayout = () => {
     return <Skeleton />
   }
   return (
-    <Layout>
+    <Layout style={{overflowX: 'hidden'}}>
       <AppSidebar />
-      <Layout>
+      <Layout style={{minWidth: 320}}>
         <AppHeader />
         <AppContent />
         <AppFooter />

@@ -26,7 +26,7 @@ const AppHeader = () => {
     },
   ];
   return (
-    <Header style={{backgroundColor: 'white'}}>
+    <Header style={{backgroundColor: 'white', padding: 0}}>
       <Row type="flex" justify="space-between">
         <div>
           Header
