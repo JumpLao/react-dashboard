@@ -12,7 +12,7 @@ const Exception = ({
         status={code}
         title={code}
         subTitle="Sorry, you are not authorized to access this page."
-        extra={<Button type="primary" onClick={() => history.replace('/')}>Back Home</Button>}
+        extra={<Button type="primary" onClick={() => history.replace('/')}>Back to Home</Button>}
       />
     </Layout>
   )

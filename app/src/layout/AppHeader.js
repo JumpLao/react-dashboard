@@ -2,6 +2,7 @@
 import React from 'react'
 import { Layout, Row, Col, Avatar, Menu, Icon, List } from 'antd'
 import { useAuth } from "@react-dashboard/auth"
+import { useHistory } from 'react-router'
 const {
   Header,
 } = Layout
@@ -10,7 +11,13 @@ const {
 const AppHeader = () => {
   const {
     user,
+    logout
   } = useAuth()
+  const history = useHistory();
+  const handleLogout = async () => {
+    await logout()
+    history.push('/')
+  }
   const data = [
     {
       title: 'Ant Design Title 1',
@@ -65,7 +72,7 @@ const AppHeader = () => {
               <Menu.Item>
                 Test 1
               </Menu.Item>
-              <Menu.Item>
+              <Menu.Item onClick={handleLogout}>
                 Logout
               </Menu.Item>
             </Menu.SubMenu>
