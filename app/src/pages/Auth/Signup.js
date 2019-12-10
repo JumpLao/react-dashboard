@@ -38,56 +38,54 @@ const Signup = () => {
     )
   }
   return (
-    <AuthLayout>
-      <Form onSubmit={handleSubmit} validationSchema={validationSchema}>
-        <Typography.Title>Sign up</Typography.Title>
-        <Typography.Paragraph>
-          It's free and only take minutes
-        </Typography.Paragraph>
-        <TextInput
-          formItemOptions={{formItemLayout: null}}
-          prefix={<Icon type="user" style={{ fontSize: 13 }} />}
-          name="name"
-          placeholder="Full Name"
-        />
-        <TextInput
-          formItemOptions={{formItemLayout: null}}
-          prefix={<Icon type="phone" style={{ fontSize: 13 }} />}
-          name="phone"
-          placeholder="Phone Number"
-        />
-        <TextInput
-          formItemOptions={{formItemLayout: null}}
-          prefix={<Icon type="mail" style={{ fontSize: 13 }} />}
-          name="email"
-          placeholder="Email"
-        />
-        <TextInput
-          formItemOptions={{formItemLayout: null}}
-          prefix={<Icon type="lock" style={{ fontSize: 13 }} />}
-          name="password"
-          placeholder="Password"
-          type="password"
-        />
-        <TextInput
-          formItemOptions={{formItemLayout: null}}
-          prefix={<Icon type="lock" style={{ fontSize: 13 }} />}
-          name="confirmPassword"
-          placeholder="Confirm password"
-          type="password"
-        />
-        <SubmitButton
-          formItemOptions={{formItemLayout: null}}
-          label="Create account"
-          block
-          type="primary"
-        />
-        <Divider>Or</Divider>
-        <div style={{textAlign: 'center'}}>
-          Already have an account? <Link to="/signin">Sign in</Link>
-        </div>
-      </Form>
-    </AuthLayout>
+    <Form onSubmit={handleSubmit} validationSchema={validationSchema}>
+      <Typography.Title>Sign up</Typography.Title>
+      <Typography.Paragraph>
+        It's free and only take minutes
+      </Typography.Paragraph>
+      <TextInput
+        formItemOptions={{formItemLayout: null}}
+        prefix={<Icon type="user" style={{ fontSize: 13 }} />}
+        name="name"
+        placeholder="Full Name"
+      />
+      <TextInput
+        formItemOptions={{formItemLayout: null}}
+        prefix={<Icon type="phone" style={{ fontSize: 13 }} />}
+        name="phone"
+        placeholder="Phone Number"
+      />
+      <TextInput
+        formItemOptions={{formItemLayout: null}}
+        prefix={<Icon type="mail" style={{ fontSize: 13 }} />}
+        name="email"
+        placeholder="Email"
+      />
+      <TextInput
+        formItemOptions={{formItemLayout: null}}
+        prefix={<Icon type="lock" style={{ fontSize: 13 }} />}
+        name="password"
+        placeholder="Password"
+        type="password"
+      />
+      <TextInput
+        formItemOptions={{formItemLayout: null}}
+        prefix={<Icon type="lock" style={{ fontSize: 13 }} />}
+        name="confirmPassword"
+        placeholder="Confirm password"
+        type="password"
+      />
+      <SubmitButton
+        formItemOptions={{formItemLayout: null}}
+        label="Create account"
+        block
+        type="primary"
+      />
+      <Divider>Or</Divider>
+      <div style={{textAlign: 'center'}}>
+        Already have an account? <Link to="/signin">Sign in</Link>
+      </div>
+    </Form>
   )
 }
 

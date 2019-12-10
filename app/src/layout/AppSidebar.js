@@ -1,13 +1,14 @@
 import React from 'react'
 import { Layout, Menu } from 'antd'
-import routes from '../config/routes'
 import {
   useHistory
 } from "react-router-dom";
 const {
   Sider,
 } = Layout
-const AppSidebar = () => {
+const AppSidebar = ({
+  route
+}) => {
   // const [currentPath, setcurrentPath] = useState()
   // const location = useLocation();
   const history = useHistory();
@@ -16,7 +17,7 @@ const AppSidebar = () => {
   //   console.log(history)
   //   setcurrentPath(location.pathname)
   // }, [location, history]);
-  const myRoutes = routes[0].routes
+  const myRoutes = route.routes
   const renderMenu = (route) => {
     if (!route.menu) {
       return null

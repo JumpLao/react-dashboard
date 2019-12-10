@@ -6,7 +6,9 @@ import AppHeader from './AppHeader';
 import AppContent from './AppContent';
 import AppFooter from './AppFooter';
 
-const AppLayout = () => {
+const AppLayout = ({
+  route
+}) => {
   useAuthenticated()
   const {
     user
@@ -16,10 +18,10 @@ const AppLayout = () => {
   }
   return (
     <Layout style={{overflowX: 'hidden'}}>
-      <AppSidebar />
+      <AppSidebar route={route}/>
       <Layout style={{minWidth: 320}}>
         <AppHeader />
-        <AppContent />
+          <AppContent route={route}/>
         <AppFooter />
       </Layout>
     </Layout>

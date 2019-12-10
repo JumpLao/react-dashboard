@@ -21,40 +21,38 @@ const Signin = () => {
     history.push('/dashboard')
   }
   return (
-    <AuthLayout>
-      <Form onSubmit={handleSubmit} validationSchema={validationSchema}>
-        <Typography.Title>Sign in</Typography.Title>
-        <Typography.Paragraph>
-          Login using your email and password
-        </Typography.Paragraph>
-        <TextInput
-          formItemOptions={{formItemLayout: null}}
-          prefix={<Icon type="user" style={{ fontSize: 13 }} />}
-          name="username"
-          placeholder="Username"
-        />
-        <TextInput
-          formItemOptions={{formItemLayout: null}}
-          prefix={<Icon type="lock" style={{ fontSize: 13 }} />}
-          name="password"
-          placeholder="Password"
-          type="password"
-        />
-        <SubmitButton
-          formItemOptions={{formItemLayout: null}}
-          label="Login"
-          block
-          type="primary"
-        />
-        <div style={{textAlign: 'right'}}>
-          <Link to="/forgotPassword">Forgot password</Link>
-        </div>
-        <Divider>Or</Divider>
-        <div style={{textAlign: 'center'}}>
-          Don't have an account? <Link to="/signup">Create account</Link>
-        </div>
-      </Form>
-    </AuthLayout>
+    <Form onSubmit={handleSubmit} validationSchema={validationSchema}>
+      <Typography.Title>Sign in</Typography.Title>
+      <Typography.Paragraph>
+        Login using your email and password
+      </Typography.Paragraph>
+      <TextInput
+        formItemOptions={{formItemLayout: null}}
+        prefix={<Icon type="user" style={{ fontSize: 13 }} />}
+        name="username"
+        placeholder="Username"
+      />
+      <TextInput
+        formItemOptions={{formItemLayout: null}}
+        prefix={<Icon type="lock" style={{ fontSize: 13 }} />}
+        name="password"
+        placeholder="Password"
+        type="password"
+      />
+      <SubmitButton
+        formItemOptions={{formItemLayout: null}}
+        label="Login"
+        block
+        type="primary"
+      />
+      <div style={{textAlign: 'right'}}>
+        <Link to="/forgotPassword">Forgot password</Link>
+      </div>
+      <Divider>Or</Divider>
+      <div style={{textAlign: 'center'}}>
+        Don't have an account? <Link to="/signup">Create account</Link>
+      </div>
+    </Form>
   )
 }
 
