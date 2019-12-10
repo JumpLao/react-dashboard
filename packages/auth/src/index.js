@@ -1,16 +1,20 @@
 import React, { useState, useContext } from 'react'
-
+import {
+  useHistory
+} from 'react-router-dom'
 /**
  * @typedef UserInfoType
  * @type {object}
- * @property {string} id - an ID.
+ * @property {string | number} id - an ID.
  * @property {string} name - your name.
+ * @property {string} profileImage - profile image.
  */
 
 /**
  * @typedef AuthContextType
  * @type {object}
  * @property {UserInfoType} [user]
+ * @property {Function} [onForbidden]
  */
 
 /**
@@ -18,14 +22,23 @@ import React, { useState, useContext } from 'react'
  */
 const Context = React.createContext({});
 const AuthProvider = ({
-  children
+  children,
+  forbiddenPath = '/forbidden'
 }) => {
   /**
    * @type [UserInfoType, React.Dispatch<UserInfoType>]
    */
   const [user, setuser] = useState()
+  // const history = useHistory()
+  const history = useHistory()
   const contextValue = {
-    user
+    user,
+    onForbidden: () => history.push(forbiddenPath),
+    login: () => setuser({
+      id: 1,
+      name: 'jump',
+      profileImage: 'https://i.pravatar.cc/300'
+    })
   }
   return (
     <Context.Provider value={contextValue}>
@@ -41,7 +54,21 @@ const useAuth = () => {
   }
   return context;
 }
+/**
+ * 
+ * @param {function} forbiddenCb 
+ */
+const useAuthenticated = (forbiddenCb) => {
+  const {
+    user,
+    onForbidden
+  } = useAuth()
+  if (!user) {
+    forbiddenCb ? forbiddenCb() : onForbidden()
+  }
+}
 export default {
   AuthProvider,
-  useAuth
+  useAuth,
+  useAuthenticated
 }

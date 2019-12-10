@@ -1,13 +1,77 @@
 
 import React from 'react'
-import { Layout } from 'antd'
+import { Layout, Row, Col, Avatar, Menu, Icon, Dropdown, List } from 'antd'
+import { useAuth } from "@react-dashboard/auth"
 const {
   Header,
 } = Layout
+
+
 const AppHeader = () => {
+  const {
+    user,
+  } = useAuth()
+  const data = [
+    {
+      title: 'Ant Design Title 1',
+    },
+    {
+      title: 'Ant Design Title 2',
+    },
+    {
+      title: 'Ant Design Title 3',
+    },
+    {
+      title: 'Ant Design Title 4',
+    },
+  ];
   return (
-    <Header>
-      Header
+    <Header style={{backgroundColor: 'white'}}>
+      <Row type="flex" justify="space-between">
+        <div>
+          Header
+        </div>
+        <Col>
+          <Menu
+            // theme="light"
+            mode="horizontal"
+            style={{lineHeight: '64px'}}
+          >
+            <Menu.SubMenu title={(
+              <Icon type="notification" />
+            )}>
+              <div style={{maxWidth: 320}}>
+                <List
+                  bordered
+                  itemLayout="horizontal"
+                  dataSource={data}
+                  renderItem={item => (
+                    <List.Item>
+                      <List.Item.Meta
+                        avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                        title={<a href="https://ant.design">{item.title}</a>}
+                        description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+                      />
+                    </List.Item>
+                  )}
+                />
+              </div>
+            </Menu.SubMenu>
+            <Menu.SubMenu title={(
+              <Avatar src={user.profileImage2}>
+                {user.name.charAt(0).toUpperCase()}
+              </Avatar>
+            )}>
+              <Menu.Item>
+                Test 1
+              </Menu.Item>
+              <Menu.Item>
+                Logout
+              </Menu.Item>
+            </Menu.SubMenu>
+          </Menu>
+        </Col>
+      </Row>
     </Header>
   )
 }
