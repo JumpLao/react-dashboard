@@ -26,7 +26,7 @@ const routes = [
     component: () => <Exception code="404" />
   },
   {
-    path: ['/signin', '/signup'],
+    // path: ['/signin', '/signup'],
     component: AuthLayout,
     routes: [
       {
@@ -42,10 +42,10 @@ const routes = [
     ]
   },
   {
-    path: [
-      '/dashboard',
-      '/resource'
-    ],
+    // path: [
+    //   '/dashboard',
+    //   '/resource'
+    // ],
     component: AppLayout,
     routes: [
       {
@@ -61,4 +61,13 @@ const routes = [
     component: () => (<Exception code="404"/>)
   }
 ]
-export default routes;
+// export default routes;
+
+const formattedRoute = routes.map(route => {
+  if (route.routes) {
+    route.path = route.routes.map(r => r.path)
+  }
+  return route
+})
+
+export default formattedRoute
