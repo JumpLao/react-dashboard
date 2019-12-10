@@ -1,0 +1,13 @@
+{
+  "name": "@react-dashboard/auth",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "source": "src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "microbundle watch --jsx React.createElement"
+  },
+  "peerDependencies": {
+    "react": "^16.12.0"
+  }
+}

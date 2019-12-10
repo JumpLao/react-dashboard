@@ -1,0 +1,2 @@
+!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t(require("react")):"function"==typeof define&&define.amd?define(["react"],t):e.auth=t(e.react)}(this,function(e){var t="default"in e?e.default:e,r=t.createContext({});return{AuthProvider:function(u){var n=u.children,o=e.useState();return t.createElement(r.Provider,{value:{user:o[0]}},n)},useAuth:function(){var t=e.useContext(r);if(!t)throw new Error("useAuth should be use in side auth context");return t}}});
+//# sourceMappingURL=index.umd.js.map
