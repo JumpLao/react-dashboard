@@ -16,7 +16,7 @@ const Show = () => {
   return (
     <Fetch fetch={fetch}>
       {(data) => (
-        <PageLayout title="Resource info" editPath={`/resource/${id}/edit`}>
+        <PageLayout title="Resource info" editPath={`/resource/${id}/edit`} listPath="/resource">
           <Descriptions layout="vertical">
             <Descriptions.Item span={3} label="Title">{data.title}</Descriptions.Item>
             <Descriptions.Item span={3} label="Content">{data.content}</Descriptions.Item>

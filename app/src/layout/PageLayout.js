@@ -6,14 +6,26 @@ const PageLayout = ({
   title,
   subTitle = '',
   editPath,
+  createPath,
+  listPath,
   extra = [],
   children
 }) => {
   const history = useHistory()
   const myExtra = []
+  if (listPath) {
+    myExtra.push(
+      <Button key="view" onClick={() => history.push(listPath)}>View all</Button>
+    )
+  }
   if (editPath) {
     myExtra.push(
-      <Button type="primary" onClick={() => history.push(editPath)}>Edit</Button>
+      <Button key="edit" type="primary" onClick={() => history.push(editPath)}>Edit</Button>
+    )
+  }
+  if (createPath) {
+    myExtra.push(
+      <Button key="new" type="primary" onClick={() => history.push(createPath)}>New</Button>
     )
   }
   return (
@@ -21,7 +33,7 @@ const PageLayout = ({
       onBack={() => window.history.back()}
       title={title}
       subTitle={subTitle}
-      extra={myExtra}
+      extra={[...extra, ...myExtra]}
       // breadcrumb={{routes}}
       style={{backgroundColor: 'white'}}
     >

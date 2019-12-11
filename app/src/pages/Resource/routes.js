@@ -1,8 +1,10 @@
+import React from 'react'
 import List from "./List";
 import Create from "./Create";
 import Show from "./Show";
 import Edit from "./Edit";
 import Root from "./Root";
+import Exception from "../Exception";
 
 const basePath = '/resource'
 const routes = [
@@ -32,6 +34,9 @@ const routes = [
         path: `${basePath}/:id/edit`,
         exact: true,
         component: Edit
+      },
+      {
+        component: () => <Exception code="404"/>
       }
     ]
   },

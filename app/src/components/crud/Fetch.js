@@ -1,16 +1,20 @@
-import React from 'react'
-import { useAsync } from 'react-use'
+import React, { useImperativeHandle } from 'react'
 import { Skeleton, Result } from 'antd'
 import _ from 'lodash'
+import { useAsyncRetry } from 'react-use'
 
-const Fetch = ({
+const Fetch = React.forwardRef(({
   fetch = (payload) => Promise.resolve(payload),
+  params,
   children
-}) => {
-  const state = useAsync(async () => {
-    const res = await fetch()
+}, ref) => {
+  const state = useAsyncRetry(async () => {
+    const res = await fetch(params)
     return res
-  })
+  }, [params])
+  useImperativeHandle(ref, () => ({
+    reload: state.retry
+  }))
   if (state.loading) {
     return <Skeleton />
   }
@@ -33,6 +37,6 @@ const Fetch = ({
       {children(state.value)}
     </React.Fragment>
   )
-}
+})
 
 export default Fetch
