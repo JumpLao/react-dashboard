@@ -2,7 +2,6 @@ import React from 'react'
 import { useAuth } from '@react-dashboard/auth'
 import { Form, TextInput, SubmitButton } from '@react-dashboard/form'
 import { Icon, Divider, Typography } from 'antd'
-import AuthLayout from '../../layout/AuthLayout'
 import { Link, useHistory } from 'react-router-dom'
 import * as yup from 'yup'
 

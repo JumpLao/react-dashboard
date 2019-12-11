@@ -4,7 +4,6 @@ import { useAuthenticated, useAuth } from '@react-dashboard/auth'
 import AppSidebar from './AppSidebar';
 import AppHeader from './AppHeader';
 import AppContent from './AppContent';
-import AppFooter from './AppFooter';
 
 const AppLayout = ({
   route

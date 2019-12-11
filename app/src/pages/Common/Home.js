@@ -1,11 +1,6 @@
 import React from 'react'
-import { Button } from 'antd'
-import { useAuth } from '@react-dashboard/auth'
-import { useHistory, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 const Home = () => {
-  const {
-    login
-  } = useAuth();
   return (
     <div>
       Home page
