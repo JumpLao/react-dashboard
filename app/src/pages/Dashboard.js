@@ -1,9 +1,10 @@
 import React from 'react'
+import PageLayout from '../layout/PageLayout'
 const Dashboard = () => {
   return (
-    <div>
+    <PageLayout title="Dashboard">
       Dashboard
-    </div>
+    </PageLayout>
   )
 }
 
