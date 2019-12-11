@@ -17,12 +17,11 @@ const AppLayout = ({
     return <Skeleton />
   }
   return (
-    <Layout style={{overflowX: 'hidden'}}>
+    <Layout style={{overflowX: 'hidden', maxHeight: '100vh'}}>
       <AppSidebar route={route}/>
       <Layout style={{minWidth: 320}}>
         <AppHeader />
-          <AppContent route={route}/>
-        <AppFooter />
+        <AppContent route={route}/>
       </Layout>
     </Layout>
   )

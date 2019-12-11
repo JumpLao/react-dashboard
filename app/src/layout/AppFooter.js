@@ -6,7 +6,7 @@ const {
 const AppFooter = () => {
   return (
     <Footer>
-      Footer
+      © React Dashboard
     </Footer>
   )
 }

@@ -3,6 +3,7 @@ import React from 'react'
 import { Layout, Row, Col, Avatar, Menu, Icon, List } from 'antd'
 import { useAuth } from "@react-dashboard/auth"
 import { useHistory } from 'react-router'
+import { Link } from 'react-router-dom'
 const {
   Header,
 } = Layout
@@ -36,7 +37,6 @@ const AppHeader = () => {
     <Header style={{backgroundColor: 'white', padding: 0}}>
       <Row type="flex" justify="space-between">
         <div>
-          Header
         </div>
         <Col>
           <Menu
@@ -70,7 +70,9 @@ const AppHeader = () => {
               </Avatar>
             )}>
               <Menu.Item>
-                Test 1
+                <Link to="/profile">
+                  My profile
+                </Link>
               </Menu.Item>
               <Menu.Item onClick={handleLogout}>
                 Logout

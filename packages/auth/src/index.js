@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 import {
   useHistory
 } from 'react-router-dom'
+import { useEffectOnce } from 'react-use'
 /**
  * @typedef UserInfoType
  * @type {object}
@@ -19,6 +20,7 @@ import {
  * @property {Function} [register]
  * @property {Function} [getUserInfo]
  * @property {Function} [logout]
+ * @property {any} [client]
  */
 
 /**
@@ -28,28 +30,42 @@ const Context = React.createContext({});
 export const AuthProvider = ({
   children,
   forbiddenPath = '/forbidden',
+  loadingComponent = () => <div>Loading</div>,
   client = {
     login: (payload) => Promise.resolve(),
     register: (payload) => Promise.resolve(),
-    getUserInfo: (payload) => Promise.resolve({
+    getUserInfo: () => Promise.resolve({
       id: 1,
       name: 'Mock'
     }),
-    logout: (payload) => Promise.resolve()
+    logout: () => Promise.resolve()
   }
 }) => {
   /**
    * @type [UserInfoType, React.Dispatch<UserInfoType>]
    */
   const [user, setuser] = useState()
+  const [loading, setloading] = useState(true)
   // const history = useHistory()
   const history = useHistory()
+  useEffectOnce(async () => {
+    try {
+      const res = await client.getUserInfo()
+      setuser(res)
+    } catch (e) {
+      console.log('Not authenticated')
+    }
+    setloading(false)
+  })
+  if (loading) {
+    return loadingComponent()
+  }
   const contextValue = {
     user,
     onForbidden: () => history.push(forbiddenPath),
     ...client,
-    login: async () => {
-      await client.login()
+    login: async (payload) => {
+      await client.login(payload)
       const user = await client.getUserInfo()
       setuser(user)
     },

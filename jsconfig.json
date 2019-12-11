@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "listFiles": true,
     "paths": {
        "@react-dashboard/*": [ "./packages/*/src" ]
     }

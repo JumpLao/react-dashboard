@@ -3,14 +3,15 @@ import InputWrapper from './InputWrapper'
 import { Button } from 'antd'
 
 const SubmitButton = ({
-  label = 'Submit',
+  label,
   formItemOptions = {},
+  children = 'Submit',
   ...rest
 }) => {
   return (
-    <InputWrapper {...formItemOptions}>
-      <Button htmlType='submit' {...rest}>
-        {label}
+    <InputWrapper label={label} {...formItemOptions}>
+      <Button type="primary" htmlType='submit' {...rest}>
+        {children}
       </Button>
     </InputWrapper>
   )

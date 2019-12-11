@@ -14,11 +14,19 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "db",
+    "public": false
   },
   "AccessToken": {
     "dataSource": "db",
-    "public": false
+    "public": false,
+    "relations": {
+      "user": {
+        "type": "belongsTo",
+        "model": "AppUser",
+        "foreignKey": "userId"
+      }
+    }
   },
   "ACL": {
     "dataSource": "db",
@@ -33,9 +41,37 @@
   },
   "Role": {
     "dataSource": "db",
-    "public": false
+    "public": false,
+    "relations": {
+      "users": {
+        "type": "hasMany",
+        "model": "AppUser",
+        "foreignKey": "roleId",
+        "through": "RoleMapping"
+      }
+    }
   },
   "Note": {
     "dataSource": "db"
+  },
+  "AppUser": {
+    "dataSource": "db",
+    "public": true,
+    "relations": {
+      "accessTokens": {
+        "type": "hasMany",
+        "model": "AccessToken",
+        "foreignKey": "userId",
+        "options": {
+          "disableInclude": true
+        }
+      },
+      "roles": {
+        "type": "hasMany",
+        "model": "Role",
+        "foreignKey": "principalId",
+        "through": "RoleMapping"
+      }
+    }
   }
 }

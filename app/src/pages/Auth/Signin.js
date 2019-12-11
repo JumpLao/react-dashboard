@@ -7,7 +7,7 @@ import { Link, useHistory } from 'react-router-dom'
 import * as yup from 'yup'
 
 const validationSchema = yup.object().shape({
-  username: yup.string().required(),
+  email: yup.string().required().email(),
   password: yup.string().required().min(6)
 })
 
@@ -27,12 +27,14 @@ const Signin = () => {
         Login using your email and password
       </Typography.Paragraph>
       <TextInput
+        label=""
         formItemOptions={{formItemLayout: null}}
-        prefix={<Icon type="user" style={{ fontSize: 13 }} />}
-        name="username"
-        placeholder="Username"
+        prefix={<Icon type="mail" style={{ fontSize: 13 }} />}
+        name="email"
+        placeholder="Email"
       />
       <TextInput
+        label=""
         formItemOptions={{formItemLayout: null}}
         prefix={<Icon type="lock" style={{ fontSize: 13 }} />}
         name="password"
@@ -41,10 +43,10 @@ const Signin = () => {
       />
       <SubmitButton
         formItemOptions={{formItemLayout: null}}
-        label="Login"
+        label=""
         block
         type="primary"
-      />
+      >Login</SubmitButton>
       <div style={{textAlign: 'right'}}>
         <Link to="/forgotPassword">Forgot password</Link>
       </div>

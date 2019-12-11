@@ -8,7 +8,17 @@ const Form = ({
   children,
   onSubmit,
   defaultValues = {},
-  validationSchema = yup.object({})
+  validationSchema = yup.object({}),
+  formItemLayout = {
+    labelCol: {
+      xs: { span: 24 },
+      sm: { span: 24 },
+    },
+    wrapperCol: {
+      xs: { span: 24 },
+      sm: { span: 24  },
+    },
+  },
 }) => {
   useDeepCompareEffect(() => {
     console.log('default value change')
@@ -32,7 +42,7 @@ const Form = ({
   }
   return (
     <FormContext {...methods}>
-      <AntdForm onSubmit={methods.handleSubmit(handleSubmit)}>
+      <AntdForm {...formItemLayout} onSubmit={methods.handleSubmit(handleSubmit)}>
         {children}
       </AntdForm>
     </FormContext>

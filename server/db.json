@@ -1,0 +1,28 @@
+{
+  "ids": {
+    "User": 1,
+    "AccessToken": 6,
+    "ACL": 1,
+    "RoleMapping": 1,
+    "Role": 1,
+    "Note": 3,
+    "AppUser": 2
+  },
+  "models": {
+    "User": {},
+    "AccessToken": {
+      "Xfr2WFZLEMZF7qGr49aVUJiZVAe2sybjlmnpHBHmYBv8AXXKOoAIp4Wa9W2kzbAg": "{\"id\":\"Xfr2WFZLEMZF7qGr49aVUJiZVAe2sybjlmnpHBHmYBv8AXXKOoAIp4Wa9W2kzbAg\",\"ttl\":1209600,\"created\":\"2019-12-10T16:46:04.468Z\",\"userId\":1}",
+      "ZQvJF8BrFrVzzFBEvGrbxxdpfPnx1s9713GdyHe9Z8o07jGteDRKqjIDTG1AEX3W": "{\"id\":\"ZQvJF8BrFrVzzFBEvGrbxxdpfPnx1s9713GdyHe9Z8o07jGteDRKqjIDTG1AEX3W\",\"ttl\":1209600,\"created\":\"2019-12-11T02:04:11.890Z\",\"userId\":1}"
+    },
+    "ACL": {},
+    "RoleMapping": {},
+    "Role": {},
+    "Note": {
+      "1": "{\"title\":\"Test\",\"content\":\"Hello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello world\",\"id\":1}",
+      "2": "{\"title\":\"GG332133\",\"content\":\"Test contentTest contentTest contentTest contentTest contentTest contentTest contentTest contentTest contentTest contentTest contentTest contentTest contentTest contentTest contentTest content\",\"id\":2}"
+    },
+    "AppUser": {
+      "1": "{\"name\":\"Jump\",\"phone\":\"+66874120044\",\"password\":\"$2a$10$mPqk75GXVaiGugn0eBzyWeefQqrc5ow4JiMvl2OPlvZPwRaHkBjMa\",\"email\":\"codingarena01@yopmail.com\",\"confirmPassword\":\"password\",\"id\":1}"
+    }
+  }
+}

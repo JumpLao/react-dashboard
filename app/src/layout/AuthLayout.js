@@ -6,10 +6,15 @@ const AuthLayout = ({
   route
 }) => {
   return (
-    <Layout style={{minHeight: '100vh', display: 'flex', alignItem: 'center', padding: '70px 0px'}}>
-      <Card style={{width: 320, maxWidth: '100%', margin: 'auto'}}>
-      {renderRoutes(route.routes)}
-      </Card>
+    <Layout>
+      <Layout.Content style={{padding: '70px 0px', display: 'flex', alignItems: 'center'}}>
+        <Card style={{width: 320, maxWidth: '100%', marginLeft: 'auto', marginRight: 'auto'}}>
+        {renderRoutes(route.routes)}
+        </Card>
+      </Layout.Content>
+      <Layout.Footer>
+        © React Dashboard
+      </Layout.Footer>
     </Layout>
   )
 }

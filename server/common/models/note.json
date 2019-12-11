@@ -8,5 +8,9 @@
     "content": {
       "type": "string"
     }
-  }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
 }

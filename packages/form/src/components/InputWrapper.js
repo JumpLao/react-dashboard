@@ -5,9 +5,9 @@ import _ from 'lodash'
 
 const InputWrapper = ({
   name = undefined,
-  label = undefined,
+  label = ' ',
   colon = false,
-  valueKey = 'value',
+  defaultValueKey = 'defaultValue',
   changeEvent = 'onChange',
   eventValueGetter = (e) => e.target.value,
   children,
@@ -70,7 +70,7 @@ const InputWrapper = ({
   const inputProps = {
     ...rest,
     [changeEvent]: handleChange,
-    [valueKey]: value
+    [defaultValueKey]: value
   }
   return (
     // @ts-ignore
