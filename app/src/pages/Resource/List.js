@@ -7,7 +7,7 @@ import ListOperation from 'app/src/components/crud/ListOperation';
 
 const List = () => {
   const defaultPage = 1
-  const defaultPageSize = 2
+  const defaultPageSize = 10
   const fetchRef = useRef(null)
   const [page, setpage] = useState(defaultPage)
   const [pageSize, setpageSize] = useState(defaultPageSize)
@@ -38,10 +38,8 @@ const List = () => {
     fetchRef.current.reload()
   }
   const handleChange = (pagination, filters, sorter) => {
-    console.log(pagination, filters, sorter)
     setpage(pagination.current)
     setpageSize(pagination.pageSize)
-    // fetchRef.current.reload()
   }
   const columns = [
     {

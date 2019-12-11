@@ -24,7 +24,7 @@
       "4": "{\"title\":\"Test 3\",\"content\":\"Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test \",\"id\":4}"
     },
     "AppUser": {
-      "1": "{\"name\":\"Jump\",\"phone\":\"+66874120044\",\"password\":\"$2a$10$mPqk75GXVaiGugn0eBzyWeefQqrc5ow4JiMvl2OPlvZPwRaHkBjMa\",\"email\":\"codingarena01@yopmail.com\",\"confirmPassword\":\"password\",\"id\":1}"
+      "1": "{\"name\":\"Jump Lao\",\"phone\":\"+66874120044\",\"password\":\"$2a$10$mPqk75GXVaiGugn0eBzyWeefQqrc5ow4JiMvl2OPlvZPwRaHkBjMa\",\"email\":\"codingarena01@yopmail.com\",\"confirmPassword\":\"password\",\"id\":1}"
     }
   }
 }

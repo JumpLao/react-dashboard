@@ -7,7 +7,7 @@ import Root from "./Root";
 import Exception from "../Exception";
 
 const basePath = '/resource'
-const routes = [
+const resourceRoute = [
   {
     menu: 'Resource',
     path: basePath,
@@ -42,4 +42,4 @@ const routes = [
   },
 ]
 
-export default routes
+export default resourceRoute

@@ -2,6 +2,7 @@ import React from 'react'
 // import { Redirect } from 'react-router-dom'
 import Dashboard from "../pages/Dashboard";
 import resourceRoute from '../pages/Resource/routes'
+import profileRoute from '../pages/Profile/routes'
 import AppLayout from '../layout/AppLayout';
 import AuthLayout from '../layout/AuthLayout';
 import Signup from '../pages/Auth/Signup';
@@ -55,6 +56,7 @@ const routes = [
         component: Dashboard
       },
       ...resourceRoute,
+      ...profileRoute
     ]
   },
   {

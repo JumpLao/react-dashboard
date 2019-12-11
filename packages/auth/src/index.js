@@ -60,18 +60,24 @@ export const AuthProvider = ({
   if (loading) {
     return loadingComponent()
   }
+  const getUserInfo = async () => {
+    const user = await client.getUserInfo()
+    setuser(user)
+    return user
+  }
   const contextValue = {
     user,
     onForbidden: () => history.push(forbiddenPath),
     ...client,
+    getUserInfo,
     login: async (payload) => {
       await client.login(payload)
-      const user = await client.getUserInfo()
-      setuser(user)
+      return await getUserInfo()
     },
     logout: async () => {
       await client.logout()
       setuser(null)
+      return
     }
   }
   return (
