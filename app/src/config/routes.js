@@ -9,6 +9,7 @@ import Signup from '../pages/Auth/Signup';
 import Signin from '../pages/Auth/Signin';
 import Exception from '../pages/Exception';
 import Home from '../pages/Common/Home';
+import certificateConfig from '../pages/Certificate/routes'
 
 const routes = [
   {
@@ -55,6 +56,7 @@ const routes = [
         exact: true,
         component: Dashboard
       },
+      ...certificateConfig,
       ...resourceRoute,
       ...profileRoute
     ]

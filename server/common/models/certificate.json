@@ -1,19 +1,16 @@
 {
-  "name": "AppUser",
-  "base": "User",
+  "name": "Certificate",
+  "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
-  },
-  "http": {
-    "path": "Users"
   },
   "properties": {
     "name": {
       "type": "string",
       "required": true
     },
-    "phone": {
+    "type": {
       "type": "string",
       "required": true
     }

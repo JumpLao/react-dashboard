@@ -15,7 +15,7 @@ const List = () => {
     const filter = {
       // where: {}
     }
-    const data = await authClient.client.get('/api/notes', {
+    const data = await authClient.client.get('/api/certificates', {
       params: {
         filter: {
           ...filter,
@@ -24,7 +24,7 @@ const List = () => {
         }
       }
     }).then(res => res.data)
-    const count = await authClient.client.get('/api/notes/count', {
+    const count = await authClient.client.get('/api/certificates/count', {
       params: {
         filter
       }
@@ -43,20 +43,19 @@ const List = () => {
   }
   const columns = [
     {
-      title: 'Title',
-      dataIndex: 'title',
-      key: 'title',
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name',
     },
     {
-      title: 'Content',
-      dataIndex: 'content',
-      key: 'content',
-      render: (text) => text.substring(0, 30)
+      title: 'Type',
+      dataIndex: 'type',
+      key: 'type',
     },
     {
       title: 'Operation',
       key: 'operation',
-      render: (row) => <ListOperation basePath="/resource" row={row} />
+      render: (row) => <ListOperation basePath="/certificate" row={row} />
     }
   ];
   return (
@@ -64,7 +63,7 @@ const List = () => {
       {({data, total}) => (
         <PageLayout
           title="Resource list"
-          createPath="/resource/create"
+          createPath="/certificate/create"
           extra={[<Button onClick={handleReload}>Reload</Button>]}
         >
           <Table rowKey="id" onChange={handleChange} columns={columns} dataSource={data} pagination={{

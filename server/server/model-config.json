@@ -73,5 +73,9 @@
         "through": "RoleMapping"
       }
     }
+  },
+  "Certificate": {
+    "dataSource": "db",
+    "public": true
   }
 }
