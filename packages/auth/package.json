@@ -1,7 +1,8 @@
 {
   "name": "@react-dashboard/auth",
-  "private": false,
-  "version": "1.0.2",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/index.js",
   "source": "src/index.js",
   "types": "dist/index.d.js",
@@ -15,5 +16,5 @@
     "react-router-dom": "^5.1.2",
     "react-use": "^13.12.2"
   },
-  "gitHead": "23ae02e4c4df26f8fcdd2b121dd69336a920605e"
+  "gitHead": "8864f42d5a33dfa2999abd627fca92e99b12c1e4"
 }

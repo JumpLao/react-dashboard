@@ -1,6 +1,8 @@
 {
   "name": "@react-dashboard/form",
-  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "1.0.2",
   "main": "dist/index.js",
   "source": "src/index.js",
@@ -18,5 +20,5 @@
     "react-use": "^13.12.1",
     "yup": "^0.27.0"
   },
-  "gitHead": "23ae02e4c4df26f8fcdd2b121dd69336a920605e"
+  "gitHead": "8864f42d5a33dfa2999abd627fca92e99b12c1e4"
 }
