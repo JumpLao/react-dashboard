@@ -1,5 +1,6 @@
 {
   "name": "server",
+  "private": true,
   "version": "1.0.1",
   "main": "server/server.js",
   "engines": {
@@ -32,5 +33,6 @@
     "url": ""
   },
   "license": "UNLICENSED",
-  "description": "server"
+  "description": "server",
+  "gitHead": "23ae02e4c4df26f8fcdd2b121dd69336a920605e"
 }
