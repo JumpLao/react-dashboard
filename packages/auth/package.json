@@ -1,5 +1,6 @@
 {
   "name": "@react-dashboard/auth",
+  "version": "1.0.2",
   "publishConfig": {
     "access": "public"
   },
