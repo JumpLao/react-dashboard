@@ -13,6 +13,7 @@ const Edit = () => {
   } = useAuth()
   const fetch = async () => {
     const res = await authClient.client.get('/api/users/me').then(res => res.data)
+    console.log()
     return res
   }
   const handleSubmit = async (data) => {
