@@ -48,14 +48,18 @@ export const AuthProvider = ({
   const [loading, setloading] = useState(true)
   // const history = useHistory()
   const history = useHistory()
-  useEffectOnce(async () => {
-    try {
-      const res = await client.getUserInfo()
-      setuser(res)
-    } catch (e) {
-      console.log('Not authenticated')
+  useEffectOnce(() => {
+    const getUser = async () => {
+      try {
+        const res = await client.getUserInfo()
+        setuser(res)
+      } catch (e) {
+        console.log('Not authenticated')
+      } finally {
+        setloading(false)
+      }
     }
-    setloading(false)
+    getUser()
   })
   if (loading) {
     return loadingComponent()
