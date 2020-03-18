@@ -1,10 +1,10 @@
 {
   "name": "app",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": true,
   "dependencies": {
     "@react-dashboard/auth": "^1.0.3",
-    "@react-dashboard/form": "^1.0.3",
+    "@react-dashboard/form": "^1.0.4",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
