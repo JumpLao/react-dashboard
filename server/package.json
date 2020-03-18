@@ -8,7 +8,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "start": "nodemon --require dotenv/config -L .",
+    "start": "nodemon --require dotenv/config -L --ignore 'db.json' --inspect=0.0.0.0:9229 .",
     "posttest": "npm run lint && nsp check"
   },
   "dependencies": {
@@ -16,10 +16,12 @@
     "cors": "^2.5.2",
     "helmet": "^1.3.0",
     "loopback": "^3.0.0",
+    "loopback-audit-trail": "^0.1.1",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^5.0.0",
     "serve-favicon": "^2.0.1",
-    "strong-error-handler": "^2.0.0"
+    "strong-error-handler": "^2.0.0",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",

@@ -6,7 +6,7 @@
     "microbundle": "^0.11.0"
   },
   "scripts": {
-    "start": "lerna run start --parallel",
+    "start": "lerna run start --parallel --no-bail",
     "lerna": "lerna",
     "deploy": "lerna run build && lerna publish"
   },
