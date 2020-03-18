@@ -19,5 +19,8 @@ jobs:
           paths:
             - ./node_modules
       - run:
+          name: set-git-config
+          command: git config user.email "${GIT_AUTHOR_EMAIL}" && git config user.name "${GIT_AUTHOR_NAME}"
+      - run:
           name: publish
           command: yarn lerna publish patch --yes
