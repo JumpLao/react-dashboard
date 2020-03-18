@@ -20,4 +20,4 @@ jobs:
             - ./node_modules
       - run:
           name: publish
-          command: yarn lerna publish --yes
+          command: yarn lerna publish patch --yes
