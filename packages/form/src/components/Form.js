@@ -1,6 +1,7 @@
 import React from 'react'
 import useForm, { FormContext } from 'react-hook-form'
-import { Form as AntdForm } from 'antd'
+import { Form as AntdForm } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
 import * as yup from 'yup'
 import { useDeepCompareEffect } from 'react-use'
 

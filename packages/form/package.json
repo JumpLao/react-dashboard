@@ -20,5 +20,9 @@
     "react-use": "^13.12.1",
     "yup": "^0.27.0"
   },
-  "gitHead": "8864f42d5a33dfa2999abd627fca92e99b12c1e4"
+  "gitHead": "8864f42d5a33dfa2999abd627fca92e99b12c1e4",
+  "dependencies": {
+    "@ant-design/compatible": "^1.0.2",
+    "antd": "^4.1.4"
+  }
 }

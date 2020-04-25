@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useFormContext } from 'react-hook-form'
-import { Form } from 'antd'
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
 import _ from 'lodash'
 
 const InputWrapper = ({
