@@ -1,5 +1,6 @@
 import React from 'react'
-import { Menu, Dropdown, Icon } from 'antd';
+import { Menu, Dropdown } from 'antd';
+import { Icon } from '@ant-design/compatible'
 import { Link } from 'react-router-dom';
 
 const ListOperation = ({

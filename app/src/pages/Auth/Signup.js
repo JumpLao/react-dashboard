@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Form, TextInput, SubmitButton } from '@react-dashboard/form'
-import { Icon, Divider, Typography, Button } from 'antd'
+import { Divider, Typography, Button } from 'antd'
+import { Icon } from '@ant-design/compatible'
 import { Link, useHistory } from 'react-router-dom'
 import { useAuth } from '@react-dashboard/auth'
 import * as yup from 'yup'

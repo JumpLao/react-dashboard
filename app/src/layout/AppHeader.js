@@ -1,6 +1,7 @@
 
 import React from 'react'
-import { Layout, Row, Col, Avatar, Menu, Icon, List } from 'antd'
+import { Layout, Row, Col, Avatar, Menu, List } from 'antd'
+import { Icon } from '@ant-design/compatible'
 import { useAuth } from "@react-dashboard/auth"
 import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
