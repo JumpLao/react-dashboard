@@ -64,7 +64,7 @@ const List = () => {
         <PageLayout
           title="Resource list"
           createPath="/certificate/create"
-          extra={[<Button onClick={handleReload}>Reload</Button>]}
+          extra={[<Button key="reload" onClick={handleReload}>Reload</Button>]}
         >
           <Table rowKey="id" onChange={handleChange} columns={columns} dataSource={data} pagination={{
             defaultCurrent: defaultPageSize,
